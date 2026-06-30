@@ -1,0 +1,113 @@
+frontend technologies
+
+1) html - structure- 2
+2) css--stylings - bootstrap----static pages- 2 2
+3) js---dynamic web page -dynamic nature- user interaction- 3
+4) react--library-3
+
+
+html - hypertext markup language
+hypertext- text controls another text
+markup- a set of rules that defines how content should be displayed on the browser
+
+it is a standard markup language that is used to create structure
+for a webpage
+it contains series of elements that are represented by tags
+
+tag
+open tag   content        closing tag---->element
+<reserved>primary heading</reserved>
+<reserved>primary heading</reserved>
+<reserved>primary heading</reserved>
+<reserved>primary heading</reserved>
+
+ex 
+1) heading tags  h1-h6
+<h1>largest heading </h1>
+<h2>secondary heading </h2>
+<h6>smallest heading </h6>
+
+vs code 
+setting icon---settings---change the option to afterdelay
+
+extensions 
+live server
+live preview
+prettier
+es lint
+
+how to open project 
+1) using vs code
+file---open folder----select ----create new folder day1---create
+file index.html
+
+2) using code . in cmd
+open project path ----open cmd --enter code .
+
+
+heading tags
+<h1> heading</h1>
+<h2> heading</h2>
+<h3> heading</h3>
+<h4> heading</h4>
+<h5> heading</h5>
+<h6> heading</h6>
+
+tags are divided into two types
+1) pair or container tags
+<h6> heading</h6>
+2) void or self closing tags or empty tags
+<!DOCTYPE html>-
+<img>
+
+ basic structure of html
+
+ declaration
+ it tell the type of the document and version(5) of the document
+<!DOCTYPE html>---at the top of the document
+<html>--it will acts as a root element
+ <head>---it is used to defined title , meta and third party links
+    <title>First Web Page</title>
+ </head>
+ <body>
+    remaining tags and remaining content
+ </body>
+</html>
+
+paragraph tag
+<p>it is used to represent paragraph</p>
+
+attibutes
+attributes are used to control the element and provide extra information 
+about an element
+
+
+anchor tag
+it is used to apply internal and external routing
+
+1) external routing
+<a href="">link</a>
+  a) absolute  ---like an external source or complete path  c:/drive/internal/fronted/day1/
+    <a href="https://en.wikipedia.org/wiki/HTML">html external link</a>
+
+  b) relative--local to the project
+    <a href="about.html">html external link</a>
+
+    hr tag
+    it is used to apply horizontal ruler between sections
+    <hr>
+
+
+ul -unordered list
+ul tag is used to create unordered list
+
+ll tag
+it is used to create list item
+    
+
+
+
+
+
+
+
