@@ -58,7 +58,120 @@
     <footer>content</footer>
 
     forms
+    forms are used to collect the information from the user
+    and allowing user to submit data to the server
+
+    forms used in registrations,signup,signin 
+    forms are defined with form tag
+  <form>
+
+  </form>
+  form attributes
+  actions- 
+  it specifies where the data should be submmited
+
+  method
+  it specifies how data should be transfered
+  method='get'
+  method='post'
+
+  fields are defined with input tag
+    <input type="text">
+  
+    types controls the input tag
+    text
+    password
+    email
+
+    label tag 
+    it is used to provide information about an input field
+
+
+    attibutes
+    1) placeholder
+    it provides the hint to the user inside a field
+
+    2) required
+    it specifies the field must contain something to submit
+
+    3) name 
+    it carries the value to the backend and provides key
+
+    4) value
+    it provides the predefined value to a field
+
+    5) for and id
+    it connect label with the input
+
+
     -->
+  <form action="" method="GET">
+    <label for="charmila">username:</label>
+    <input id="charmila" name="name" type="text" placeholder="enter ur usernam" required value="john">
+    <br>
+    <br>
+    <label for="ps">password:</label>
+    <input id="ps" name="password" type="password" placeholder="enter ur password">
+    <br>
+    <br>
+     <label for="">email:</label>
+    <input name="gmail" type="email" placeholder="enter ur mail">
+    <br>    
+    <label for="">dob</label>
+    <input type="date">
+    <br>
+    <label for="">time slot</label>
+    <input type="datetime-local">  <br>
+    <label for="">submit ur portfolio link</label>
+    <input type="url"> <br>
+    <label for="">upload ur resume</label>
+    <input type="file"><br>
+
+    <label for="">enter quantity</label>
+    <input type="number" min="5" max="10"> <br>
+    <input type="month">
+    <input type="range">
+    <input type="search">
+    
+
+    <input type="submit" value="submit">
+    <input type="reset" value="reset">
+  </form>
+
+
+  <form action="" method="POST">
+    <div>Select your stack</div>
+    <input type="radio" id="py"  name="skillset" value="pythonstack">
+    <label for="py">PYTHON FULLSTACK</label> <br>
+    <input type="radio" id="j" name="skillset" value="javastack">
+    <label for="j">JAVA FULLSTACK</label> <br>
+    <input type="radio"  id="m" name="skillset" value="mernstack">
+    <label for="m">MERN FULLSTACK</label> <br>
+    
+    <div>choose ur skills</div>
+    <input id="h" type="checkbox" name="skills" value="html">
+    <label for="h">html</label><br>
+    <input id="c" type="checkbox" name="skills" value="css">
+    <label for="c">css</label><br>
+    <input id="js" type="checkbox" name="skills" value="js">
+    <label for="js">js    </label><br>
+
+    <label for="edu">Select Your Degree</label>
+    <select name="education" id="edu">
+        <option value="degree">Degree</option>
+        <option value="btech">btech</option>
+        <option value="mba">mba</option>
+    </select>
+
+    <textarea placeholder="Describe about yourself" rows="5" cols="10" name="" id=""></textarea>
+
+    <br>
+    <input type="checkbox" id="i"> <label for="i">I agree for terms and condtions</label>
+    <button type="submit">submit</button>
+
+  </form>
+
+
 
 
 
