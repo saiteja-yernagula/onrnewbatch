@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 
+    
+    css- cascading style sheet-- full of properties : values
+    cascading- flowing or falling or pouring
+    style sheet- document that contains styles
+
+    css is a styling language that is used to describe the presentation of
+    a html documenet
+    it deals with colors,backgroungs,fonts,animations , layouts and responsiveness
+
+    how to insert css
+    1) inline css
+    styles are added directly within the element using style attribute
+    <h1 style="color:brown;background:black;">Content</h1>
+
+    2) internal css -preferable
+    internal css can be added using stle tag 
+    /* css syntax */
+    selector is used to target the html element for applying styles
+    selector{
+    color:red;
+    declartion
+    }
+
+    h2{
+    color:orange;
+    }
+    
+    3) external css- advanced
+    external css is defined in a file with .css extension
+    and can be linked using link tag
+    
+
+    high precedence
+    1) inline
+    2) way we define -internal or external
+
+
+    types of selectors
+    1) simple selector
+       a) tagname selector
+
+        h1 {
+            color: orange;
+        }
+        
+        b) class selector
+        it is denoted with .name 
+        it is used to apply same style to multiple tags
+        class can be multipe
+
+         <h1 class="theme1">heading1</h1>
+          .theme1 {
+        color: orange;
+        background: black;
+       }
+
+       c) id selector
+       it is denoted by #name
+       it is used to apply stye unique
+       one particular id is used only once
+     <h1 class="theme1" id="demo">heading1</h1>
+       #demo{
+        background:blue;
+      }
+
+
+      high specificity
+      1) id having high
+      2) class
+      3) tagname
+
+
+   
+
+
+
+
+
+
+
+
+        
+    2) combinators
+    3) pseudo class
+
+
+       box model
+      it is used to describe the presentation of an element
+      it contains 4 componets
+
+      1) content
+      width:200px;
+      height:300px;
+
+      2) padding
+      it is the space around the content
+      padding:20px;
+      padding:10px 20px 30px 40px;
+             top   right bottom left
+      padding: 20px 30px 40px;
+             top   r/l    b
+      padding:20px 40px;
+              t/b  r/l
+
+    3) border
+    it is the line around the padding
+
+    border: width style color;
+    border: 1px solid yellow;
+    
+    styles
+    solid
+    dotted
+    double
+    dashed
+    ridge
+    groove
+    none
+
+    4) margin
+    it is the space around an element
+        margin:20px;
+       margin:10px 20px 30px 40px;
+             top   right bottom left
+      margin: 20px 30px 40px;
+             top   r/l    b
+      margin:20px 40px;
+              t/b  r/l
+
+
+    backgrounds
+    1) background-color:red;
+    2) background-image:url('link')
+    3) background-repeat:no-repeat;
+    4) background-size: cover or contain or 100% 100%;
+    5) background-attachment: fixed;
+
+
+
+    block 
+    all properties will be applied
+    div ,h1, 
+
+    inline
+    widht,height ,margin top and bottom cant be applied
+    span a img button
+
+    inline-block
+    it will behave like a inline element but takes properties like block level
+
+
+
+
+
+
+
+    -->
+
+    <!-- <link rel="stylesheet" href="demo.css"> -->
+    <style>
+      #demo {
+        background: blue;
+      }
+      .theme1 {
+        color: orange;
+        background: black;
+        width: 300px;
+        height: 300px;
+        padding: 20px;
+        padding: 10px 20px 30px 40px;
+        padding: 20px 30px 40px;
+        padding: 20px 40px;
+        border: 4px solid yellow;
+        border: 4px dotted yellow;
+        border: 4px dashed yellow;
+        border: 4px double yellow;
+        border: 4px ridge yellow;
+        border: 4px groove yellow;
+        /* border: 4px none yellow; */
+        border-radius: 50%;
+        border-radius: 20px;
+        margin: 10px 20px 30px 40px;
+        margin: 10px 30px 40px;
+        margin: 10px 40px;
+        margin: 40px;
+        display:inline-block;
+      }
+      div {
+        height: 600px;
+        background-image: url("https://thumbs.dreamstime.com/b/landscape-nature-view-background-view-window-landscape-nature-view-background-view-window-wonderful-landscape-121459679.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+
+
+      }
+
+      p{
+        
+        background:lightseagreen;
+        width:300px;
+        height:400px;
+        padding:20px;
+        margin:20px;
+      }
+
+      span{
+        background:lightsalmon;
+        padding:10px;
+        width:100px;
+        height:100px;
+        margin:40px;
+        display:inline-block;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <p>
+        Lorem ipsum <span> dolor</span>, sit amet consectetur adipisicing elit. Itaque unde, quisquam quas tempora repellat minima est doloremque ea sed reiciendis dolore eveniet. Quos cumque, voluptatibus ut nesciunt nobis dolores magni.
+    </p>
+    <div >content</div>
+    <h1 class="theme1">heading1</h1>
+    <p class="theme1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta facere
+      laborum iusto laudantium ipsa quis quisquam, debitis exercitationem! Ex
+      totam modi sint ad tempore quia pariatur magni dicta molestiae
+      repudiandae.
+    </p>
+
+    <h1 class="theme1" id="demo">heading1</h1>
+    <p class="theme1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta facere
+      laborum iusto laudantium ipsa quis quisquam, debitis exercitationem! Ex
+      totam modi sint ad tempore quia pariatur magni dicta molestiae
+      repudiandae.
+    </p>
+
+    <h1 class="theme1">heading1</h1>
+    <p class="theme1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta facere
+      laborum iusto laudantium ipsa quis quisquam, debitis exercitationem! Ex
+      totam modi sint ad tempore quia pariatur magni dicta molestiae
+      repudiandae.
+    </p>
+  </body>
+</html>

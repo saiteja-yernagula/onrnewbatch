@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        
+        combinators
+        it is used to target the html elements based on a relation
+
+        1) child selector
+        header>a
+        h1>p>button
+
+
+        universal selectors
+        it selects all the elements individually
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        }
+        text properties
+        1) text-align:center or left or right;
+        2) text-shadow
+          text-shadow: hoffset voffset blurness color;
+          text-shadow:1px 1px 5px black;
+           
+          p{
+                 /* word-spacing:10px; */
+          /* letter-spacing:2px; */
+          /* line-height:1.5; 
+        3) box shadow
+          box-shadow:1px 1px 5px 5px black;
+
+        hover
+
+
+
+          
+          */
+          
+          
+        
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        }
+        header{
+            text-align:center;
+            background:rgb(0, 0, 105);
+            padding:25px;
+            position:sticky;
+            top:0;
+            z-index:10;
+        }
+        header>a{
+            background:rgb(74, 80, 248);
+            color:white;
+            padding:10px;
+            margin:7px;
+            border-radius:7px;
+            text-decoration:none;
+        }
+        a:hover{
+            background:rgb(2, 2, 225)
+        }
+
+        .s1{
+            text-align:center;
+            background:linear-gradient(rgba(18, 3, 120, 0.5),rgba(0,0,0,0.8)),url('https://png.pngtree.com/thumb_back/fh260/background/20240610/pngtree-computer-of-a-programmer-with-lines-code-of-software-image_15746003.jpg');
+            color:white;
+            height:500px;
+            background-size:100% 100%;
+            padding:240px 10px;
+        }
+
+        .s2{
+            text-align:center;
+            height:400px;
+            padding:100px 10px;
+        }
+        .box{
+            width:120px;
+            height:100px;
+            padding:25px;
+            color:white;
+            font-weight:900;
+            display:inline-block;
+            margin:20px;
+            border-radius:10px;
+            text-align:center;
+        }
+
+        .s3{
+             text-align:center;
+            height:400px;
+            padding:60px 10px;
+        }
+        .card{
+            display:inline-block;
+            width:240px;
+            height:200px;
+            padding:20px;
+            margin:10px;
+            background:whitesmoke;
+            border:2px solid blue;
+            border-radius:10px;
+             box-shadow:1px 0px 5px 1px black;
+        }
+        h2{
+            color:blue;
+            padding:10px;
+          text-shadow:0px 0px 2px black;
+
+        }
+        p{
+          line-height:1.5;
+        }
+
+          
+        
+
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contactt</a>
+    </header>
+
+    <section class="s1">
+        <h1>Learn CSS Through Projects</h1>
+        <p>This project demonstrates CSS Colors, Backgrounds, Flexbox,
+             Box Model, Typography, Shadows, and Responsive Design in one 
+             modern webpage.</p>
+    </section>
+
+
+    <section class="s2">
+        <h1>CSS Colors</h1>
+        <div class="parent">
+            <div class="box" style="background:red;">RED</div>
+            <div class="box"  style="background:rgb(72, 0, 255);">BLUE</div>
+            <div class="box" style="background:green;">GREEN</div>
+            <div class="box" style="background:rgb(255, 0, 208);">VIOLET</div>
+        </div>
+    </section>
+
+    <section class="s3">
+        <h1>CSS Box Model</h1>
+        <div class="parent">
+            <div class="card">
+                <h2>Card One</h2>
+                <p>Padding creates space inside the element. Border surrounds the content. Margin creates space outside the element.</p>
+            </div>
+            <div class="card">
+                <h2>Card One</h2>
+                <p>Padding creates space inside the element. Border surrounds the content. Margin creates space outside the element.</p>
+            </div>
+            <div class="card">
+                <h2>Card One</h2>
+                <p>Padding creates space inside the element. Border surrounds the content. Margin creates space outside the element.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
