@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        units
+        1) absolute units
+        px , inch,cm ,mm 
+
+        2) relative units
+        %--always depends on the parent-height,width,padding,margin
+
+        viewport - vw and vh - it always depends on view port
+
+        rem- root element unit- it always depends on the fontsize of
+        root element
+        1rem=16px 
+             16*3rem =48px
+
+        div{
+            background:saddlebrown;
+            width:75vw;
+            height:200vh;
+            font-size:3rem;
+        }
+        p{
+            background:blueviolet;
+            width:75vw;
+        }
+     <div >content 
+        <p>paragraph</p>
+    </div>
+
+
+        flexbox
+        it is a one dimensional layout model that is used to create
+        different layouts
+
+        a) parent properties - flexcontainer properties
+        1) display:flex;
+        it will create flex container and it changes the flex items
+        direction into row
+
+        .parent{
+        display:flex;
+        }
+
+        2) flex-direction
+        it is used to change the flex items direction
+        .parent{
+        display:flex;
+        flex-direction:column-reverse;
+        flex-direction:row-reverse;
+        flex-direction:row;
+        flex-direction:column;
+        }
+
+        3) justify-content
+        it is used to control the child items on main axis -x axis
+           .parent{
+        display:flex;
+         justify-content:center;
+        justify-content:right;
+        justify-content:left;
+        justify-content:space-evenly;
+        justify-content:space-around;
+        justify-content:space-between;
+
+        }
+
+    4) align items
+     it is used to control the child items on cross axis
+
+.parent{
+display:flex;
+     align-items:stretch;
+        align-items:center;
+        align-items:end;
+        align-items:start;
+        }}
+
+    5) flexwrap
+    to creaate mutliple rows
+
+    .parent{
+        display:flex;
+
+    flex-wrap:wrap;
+    flex-wrap:wrap-reverse;
+    }
+
+    6) align-content
+    it is used to control the items on cross when there is a more than one row
+
+    .parent{
+        display:flex;
+         align-content:center;
+        align-content:end;
+        align-content:start;
+        align-content:space-between;
+        align-content:space-around;
+        align-content:space-evenly;
+        }
+
+    7) gap
+    it is used to create the space between rows and cols
+    gap:row col
+    gap: 10px 25px;
+
+    flex-flow: row wrap;
+    flex-flow:direction wrap;
+
+
+
+    b) child properties - flex items
+
+    flex-basis
+    it specifies the initial width for a child
+    flex-basis:30%;
+        
+
+
+
+
+
+        
+    .parent{
+        height:100vh;
+        display:flex;
+        flex-direction:row;
+        
+        justify-content:right;
+        justify-content:left;
+        justify-content:space-evenly;
+        justify-content:space-around;
+        justify-content:space-between;
+        align-items:stretch;
+        align-items:center;
+        align-items:end;
+        align-items:start;
+        justify-content:center; 
+        flex-wrap:wrap;
+        align-content:center;
+        align-content:end;
+        align-content:space-between;
+        align-content:space-around;
+        align-content:space-evenly;
+        align-content:start;
+         gap: 10px 2px;
+        }
+        .child{
+            background:lightcoral;
+            padding:10px;  
+             flex-basis:40%;
+        }
+             div class="parent">
+        <div class="child">content1</div>
+        <div class="child">content2</div>
+        <div class="child">content3</div>
+        <div class="child">content4</div>
+
+                <div class="child">content1</div>
+        <div class="child">content2</div>
+        <div class="child">content3</div>
+        <div class="child">content4</div>
+                <div class="child">content1</div>
+        <div class="child">content2</div>
+        <div class="child">content3</div>
+        <div class="child">content4</div>
+    </div>
+    
+
+
+
+        
+        */
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        header{
+            background:black;
+            color:white;
+            padding:30px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        ul{
+            display:flex;   
+            gap:10px;
+        }
+        li{
+            list-style:none;
+        }
+        span{
+            color:rgb(66, 196, 66);
+            border:2px solid rgb(66, 196, 66);
+            padding:10px;
+        }
+        
+        .s1{
+             background:black;
+            color:white;
+            padding:30px;
+            display:flex;
+            align-items:center;
+            line-height: 1.4;
+        }
+        .s1>div{
+            flex-basis:50%;
+        }
+        img{
+            width: 100%;
+            height:100%;
+        }
+        .btn1{
+            background:rgb(30, 141, 30);
+            padding:10px;
+        }
+        .btn2{
+            background:transparent;
+            color:white;
+            border:2px solid rgb(30, 141, 30);
+            padding:10px;
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1> <span >JD</span> John Doe</h1>
+        </div>
+        <ul>
+            <li>About</li>
+            <li>Achivemetns</li>
+            <li>Education</li>
+            <li>Project</li>
+            <li>Contact</li>
+        </ul>
+    </header>
+
+    <section class="s1">
+        <div>
+            <h1>Hi, I'm John Doe</h1>
+            <h1>I build simple and clean websites.</h1>
+            <p>I am a web development student who loves turning ideas into real, working web pages.</p>
+            <button class="btn1">View Project</button>
+            <button class="btn2">Download CV</button>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+        </div>
+    </section>
+
+    
+   
+</body>
+</html>
