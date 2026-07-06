@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* 
+        units
+        1) absolute units
+        px , inch,cm ,mm 
+
+        2) relative units
+        %--always depends on the parent-height,width,padding,margin
+
+        viewport - vw and vh - it always depends on view port
+
+        rem- root element unit- it always depends on the fontsize of
+        root element
+        1rem=16px 
+             16*3rem =48px
+
+        div{
+            background:saddlebrown;
+            width:75vw;
+            height:200vh;
+            font-size:3rem;
+        }
+        p{
+            background:blueviolet;
+            width:75vw;
+        }
+     <div >content 
+        <p>paragraph</p>
+    </div>
+
+
+        flexbox
+        it is a one dimensional layout model that is used to create
+        different layouts
+
+        a) parent properties - flexcontainer properties
+        1) display:flex;
+        it will create flex container and it changes the flex items
+        direction into row
+
+        .parent{
+        display:flex;
+        }
+
+        2) flex-direction
+        it is used to change the flex items direction
+        .parent{
+        display:flex;
+        flex-direction:column-reverse;
+        flex-direction:row-reverse;
+        flex-direction:row;
+        flex-direction:column;
+        }
+
+        3) justify-content
+        it is used to control the child items on main axis -x axis
+           .parent{
+        display:flex;
+         justify-content:center;
+        justify-content:right;
+        justify-content:left;
+        justify-content:space-evenly;
+        justify-content:space-around;
+        justify-content:space-between;
+
+        }
+
+    4) align items
+     it is used to control the child items on cross axis
+
+.parent{
+display:flex;
+     align-items:stretch;
+        align-items:center;
+        align-items:end;
+        align-items:start;
+        }}
+
+    5) flexwrap
+    to creaate mutliple rows
+
+    .parent{
+        display:flex;
+
+    flex-wrap:wrap;
+    flex-wrap:wrap-reverse;
+    }
+
+    6) align-content
+    it is used to control the items on cross when there is a more than one row
+
+    .parent{
+        display:flex;
+         align-content:center;
+        align-content:end;
+        align-content:start;
+        align-content:space-between;
+        align-content:space-around;
+        align-content:space-evenly;
+        }
+
+    7) gap
+    it is used to create the space between rows and cols
+    gap:row col
+    gap: 10px 25px;
+
+    flex-flow: row wrap;
+    flex-flow:direction wrap;
+
+
+
+    b) child properties - flex items
+
+    flex-basis
+    it specifies the initial width for a child
+    flex-basis:30%;
+        
+
+
+
+
+
+        
+    .parent{
+        height:100vh;
+        display:flex;
+        flex-direction:row;
+        
+        justify-content:right;
+        justify-content:left;
+        justify-content:space-evenly;
+        justify-content:space-around;
+        justify-content:space-between;
+        align-items:stretch;
+        align-items:center;
+        align-items:end;
+        align-items:start;
+        justify-content:center; 
+        flex-wrap:wrap;
+        align-content:center;
+        align-content:end;
+        align-content:space-between;
+        align-content:space-around;
+        align-content:space-evenly;
+        align-content:start;
+         gap: 10px 2px;
+        }
+        .child{
+            background:lightcoral;
+            padding:10px;  
+             flex-basis:40%;
+        }
+             div class="parent">
+        <div class="child">content1</div>
+        <div class="child">content2</div>
+        <div class="child">content3</div>
+        <div class="child">content4</div>
+
+                <div class="child">content1</div>
+        <div class="child">content2</div>
+        <div class="child">content3</div>
+        <div class="child">content4</div>
+                <div class="child">content1</div>
+        <div class="child">content2</div>
+        <div class="child">content3</div>
+        <div class="child">content4</div>
+    </div>
+    
+
+
+
+        
+        */
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        header{
+            background:black;
+            color:white;
+            padding:30px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+       header ul{
+            display:flex;   
+            gap:10px;
+        }
+      header  li{
+            list-style:none;
+        }
+        span{
+            color:rgb(66, 196, 66);
+            border:2px solid rgb(66, 196, 66);
+            padding:10px;
+        }
+        
+        .s1{
+             background:black;
+            color:white;
+            padding:30px;
+            display:flex;
+            align-items:center;
+            line-height: 1.4;
+        }
+        .s1>div{
+            flex-basis:50%;
+        }
+        img{
+            width: 100%;
+            height:100%;
+        }
+        .btn1{
+            background:rgb(30, 141, 30);
+            padding:10px;
+        }
+        .btn2{
+            background:transparent;
+            color:white;
+            border:2px solid rgb(30, 141, 30);
+            padding:10px;
+        }
+
+
+        .s3{
+            background:black;
+            color:white;
+            padding:30px;
+        }
+        .s3>div{
+            height:80vh;
+            background:rgb(23, 22, 29);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .s3>div>h1{
+            background:rgb(5, 137, 5);
+            padding:15px;
+        }
+
+
+        .s4{
+             background:black;
+            color:white;
+            padding:30px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .s4container{
+            display:flex;
+            align-items: center;
+            gap:15px;
+        }
+        .card{
+            padding:23px;
+            height:60vh;
+            background:rgb(21, 20, 27);
+            border:0px solid green;
+        }
+        i{
+            color:green;
+            font-size: 3rem;
+        }
+        .card:hover{
+            transition:all 0.5s;
+            transform:translate(0px,-10px);
+            border:2px solid green;
+        }
+
+        .s5{
+             background:black;
+            color:white;
+            padding:30px;
+            text-align: center;
+            line-height: 1.6;
+            height:100vh;
+        }
+        .s5container{
+            display:flex;
+            justify-content: center;
+            gap:20px;
+        }
+        .s5container>.card{
+            flex-basis:30%;
+            height:100%;
+        }
+        .s5container>.card>div>img{
+            width:100%;
+            height:200px;
+        }
+    
+        .s6{
+                 background:black;
+            color:white;
+            padding:50px;
+            text-align: center;
+
+        }
+        td,th{
+            padding:20px;
+        }
+
+        .s7{
+             background:black;
+            color:white;
+            padding:50px;
+            display:flex;
+            line-height: 1.7;
+
+        }
+        .s7>div{
+            flex-basis:50%;
+        }
+
+
+        @media screen and (width<590px){
+            .s4container,.s5container,.s1,.s2,.s7{
+               flex-direction: column;
+            }
+            section{
+                height:100% !important;
+            }
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1> <span >JD</span> John Doe</h1>
+        </div>
+        <ul>
+            <li>About</li>
+            <li>Achivemetns</li>
+            <li>Education</li>
+            <li>Project</li>
+            <li>Contact</li>
+        </ul>
+    </header>
+
+    <section class="s1">
+        <div>
+            <h1>Hi, I'm John Doe</h1>
+            <h1>I build simple and clean websites.</h1>
+            <p>I am a web development student who loves turning ideas into real, working web pages.</p>
+            <button class="btn1">View Project</button>
+            <button class="btn2">Download CV</button>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+        </div>
+    </section>
+
+
+    <section class="s3">
+        <div>
+            <h1>FullStack Dev</h1>
+        </div>
+    </section>
+
+    <section class="s4">
+        <h1>What I Do</h1>
+        <div class="s4container">
+
+            <div class="card">
+               <i class="fa-solid fa-desktop"></i>
+                <h3>Web Design</h3>
+                <p>Design clean and attractive websites that provide great user experience</p>
+            </div>
+                 <div class="card">
+               <i class="fa-solid fa-desktop"></i>
+                <h3>Web Design</h3>
+                <p>Design clean and attractive websites that provide great user experience</p>
+            </div>
+                 <div class="card">
+               <i class="fa-solid fa-desktop"></i>
+                <h3>Web Design</h3>
+                <p>Design clean and attractive websites that provide great user experience</p>
+            </div>
+                 <div class="card">
+               <i class="fa-solid fa-desktop"></i>
+                <h3>Web Design</h3>
+                <p>Design clean and attractive websites that provide great user experience</p>
+            </div>
+                 <div class="card">
+               <i class="fa-solid fa-desktop"></i>
+                <h3>Web Design</h3>
+                <p>Design clean and attractive websites that provide great user experience</p>
+            </div>
+                 <div class="card">
+               <i class="fa-solid fa-desktop"></i>
+                <h3>Web Design</h3>
+                <p>Design clean and attractive websites that provide great user experience</p>
+            </div>
+            <!-- copy cards here for 5 times for icons browse fontawesome icons cdn-->
+        </div>
+    </section>
+
+    <section class="s5">
+        <h1>Projects</h1>
+        <div class="s5container">
+            <div class="card">
+                <div> <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" alt=""></div>
+                <h1>Simple Calculator</h1>
+                <p>A basic calculator built using HTML, CSS and JavaScript.</p>
+                <button class="btn2">View Project</button>
+            </div>
+            <div class="card">
+                <div><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop" alt=""></div>
+                <h1>Portfolio Website</h1>
+                <p>A personal portfolio website built using HTML to showcase my skills and projects.</p>
+                <button class="btn2">View Project</button>
+            </div>
+            <div class="card">
+                <div><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" alt=""> </div>
+                <h1>Student Registration Form</h1>
+                <p>A simple registration form created using HTML form elements.</p>
+                <button class="btn2">View Project</button>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="s6">
+        <h1>Education</h1>
+        <table width="100%" cellspacing="2" >
+            <tr style="background:green;">
+                <th>Qualificaton</th>
+                <th>Institution</th>
+                <th>Year</th>
+                <th>Location</th>
+            </tr>
+            <tr>
+                <td>High School</td>
+                <td>XYZ High School</td>
+                <td>2018 - 2020</td>
+                <td>New York, USA</td>
+            </tr>
+            <tr>
+                <td>Bachelor Of Computer Science</td>
+                <td>XYZ University</td>
+                <td>2022 - 2026</td>
+                <td>New York, USA</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="s7">
+        <div>
+            <h1>Achievements</h1>
+            <ul>
+                <li> Completed HTML & CSS fundamentals course.</li>
+                <li> Built multiple small projects using HTML.</li>
+                <li>Consistently learning and improving every day.</li>
+                <li> Practicing problem solving and logical thinking.</li>
+            </ul>
+        </div>
+        <div>
+            <h1>Contact</h1>
+            <ul>
+                <li>Email: johndoe@example.com</li>
+                <li>Phone: +123 456 7890</li>
+                <li> Website: www.johndoe.com</li>
+                <li> Location: New York, USA</li>
+            </ul>
+        </div>
+    </section>
+
+    <header>
+        <p>© 2024 John Doe. All rights reserved.</p>
+        <p>@ copyright</p>
+
+
+    </header>
+
+    
+   
+</body>
+</html>
