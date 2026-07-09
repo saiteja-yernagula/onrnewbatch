@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+    static webpage -html ,css ,boostrap
+    dynamic website- javascript
+
+
+    javascript
+    it is a highlevel interpreted programming language  that is used to create
+    dynamic nature to the webpages
+                 - add to cart
+                  - search
+                  - filter
+                  - delete
+                  - crud
+                  - validations
+
+    how to insert javascript
+    1) inline
+       <button onclick='console.log("hello from inline")'>click me</button>
+       open with live server - ctrl shift j--- console 
+
+    2) internal
+       <script>
+        console.log('hello from internal')
+       </script>
+    3) external
+    creat a file with demo.js
+    console.log('hello from external')
+
+    link with script tag
+    <script src='demo.js'></script>
+
+    variables
+    
+
+    datatypes
+    conditional statements
+    loops
+    functions
+ 
+
+
+    
+    -->
+       <button onclick='console.log("hello from inline")'>click me</button>
+
+       <div id="el"></div>
+    <script src='demo.js'></script>
+
+         <script>
+ /*
+     
+variables
+variables are like a container that is used to store data
+variables are defined with var, let or const keywords followed by variable name
+
+            
+var a=10;
+let b=20;
+const c=30;   
+console.log(a);
+console.log(b);
+console.log(c);
+
+variables terms
+1) variable declartion
+var a;
+
+2)  assignment
+var a;
+a=20;
+
+3)  initialization
+var a=10;
+
+4) undefined-   a variable without an value
+var a;
+console.log(a);
+
+5) not defined- its an error
+console.log(a)
+
+6) Hoisting
+hoisting is a behaviour in js where the declaration of an variables and functions
+are moved to top even before execution
+console.log(a)//undefined
+var a=10;
+
+
+how to take input from the user
+let inp=prompt('enter ur name')
+console.log(inp)
+
+datatypes
+1) primitive datatypes
+which stores single values
+which is immutable
+which stores in stack
+
+1) strings
+strings are collection of characters that are enclosed in
+'' or " " or ``
+var str='hello world';
+str[0]='z'
+console.log(str[0])
+console.log(str)
+
+2) number
+let num=1
+let num2=10.1
+let num3=-10
+
+3) boolean - it is used for conditons
+true or false
+
+let isuserispremium=false;
+let isuserispremium=true;
+let admin=false;
+let admin=true;
+
+4) undefined- variable without value
+var a
+console.log(a)
+
+5) null- intensional absence of an value
+var rules=null;
+var emp=null;
+var admin=null;
+
+check the datatype
+console.log(typeof(str))
+
+
+2) non primitive datatypes
+which stores multiple values
+which is mutable
+which stores in heap
+
+1) array
+it is used to store multiple values in a single variable
+can be accessed using numbered indexing
+
+array is mutable
+array is homogenous or heterogenous
+
+let arr=['html','css','js',1,true,false];
+arr[0]='react'
+
+console.log(arr);//complete array
+console.log(arr[0]);//first index value
+
+2)
+objects
+it is used to store the collection of data in key value pairs
+let data={
+    name:'john',
+    rank:1,
+    age:25,
+    id:13
+}
+data.age=26;
+console.log(data)//complete data
+console.log(data.age)//dot knotation
+console.log(data['age'])//square bracket knotation
+
+functions
+function sum(a,b){
+console.log(a+b)}
+sum(3,2)
+
+condtions
+
+if(condtion1){
+//block
+}
+else if(condition2){
+//block of code
+}
+else{
+//block of code
+}
+
+
+dom 
+document object model
+it is used to control html strcutre and css layouts from js
+
+*/ 
+
+let name=prompt('enter your name')
+let marks=prompt('enter your marks')
+let grade=""
+
+if(marks>75){
+    grade="A"
+}else if(marks>35){
+    grade="B"
+}else{
+    grade="F"
+}
+let el=document.getElementById('el')
+el.innerHTML=`
+<h1>student grade system</h1>
+<div>name: ${name} , marks: ${marks}  and grade: ${grade}
+`
+
+
+
+
+
+
+
+
+
+    
+
+
+</script>
+</body>
+</html>

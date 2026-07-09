@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced To-Do App</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial;
+      }
+
+      body {
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        width: 450px;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .input-box {
+        display: flex;
+        gap: 10px;
+      }
+
+      input {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      button {
+        padding: 12px 20px;
+        border: none;
+        background: black;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #333;
+      }
+
+      .task {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f9f9f9;
+        padding: 12px;
+        margin-top: 15px;
+        border-radius: 5px;
+      }
+
+      .delete-btn {
+        background: red;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial;
+      }
+
+      body {
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        width: 450px;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .input-box {
+        display: flex;
+        gap: 10px;
+      }
+
+      input {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      button {
+        padding: 12px 20px;
+        border: none;
+        background: black;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #333;
+      }
+
+      .task {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f9f9f9;
+        padding: 12px;
+        margin-top: 15px;
+        border-radius: 5px;
+      }
+
+      .delete-btn {
+        background: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>To-Do App</h1>
+
+      <div class="input-box">
+        <input type="text" id="taskInput" placeholder="Enter task" />
+
+        <button onclick="addTask()">Add</button>
+      </div>
+
+      <div id="taskList"></div>
+    </div>
+
+    <script>
+      // GET LOCAL STORAGE DATA
+      var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+      // DISPLAY TASKS WHEN PAGE LOADS
+      displayTasks();
+
+      // ADD TASK
+      function addTask() {
+        // GET INPUT VALUE
+        var taskInput = document.getElementById("taskInput");
+
+        var taskValue = taskInput.value;
+
+        // VALIDATION
+        if (taskValue === "") {
+          alert("Enter Task");
+
+          return;
+        }
+
+        // PUSH METHOD
+        tasks.push(taskValue);
+
+        // STORE IN LOCAL STORAGE
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+
+        // CLEAR INPUT
+        taskInput.value ="";
+
+        // DISPLAY TASKS
+        displayTasks();
+      }
+
+      // DISPLAY TASKS
+      function displayTasks() {
+        var taskList = document.getElementById("taskList");
+
+        // MAP METHOD
+         taskList.innerHTML = tasks.map(function (task, index) {
+          return `
+
+           <div class="task">
+
+               <h3>${task}</h3>
+
+               <button
+                   class="delete-btn"
+                   onclick="deleteTask(${index})"
+               >
+                   Delete
+               </button>
+
+           </div>
+       `;
+        }).join('');
+
+        taskList.innerHTML = tasksData.join("");
+      }
+
+      // DELETE TASK
+      function deleteTask(index) {
+        // FILTER METHOD
+        tasks = tasks.filter(function (task, i) {
+          return i !== index;
+        });
+
+        // UPDATE LOCAL STORAGE
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+
+        // DISPLAY UPDATED TASKS
+        displayTasks();
+      }
+    </script>
+  </body>
+</html>
