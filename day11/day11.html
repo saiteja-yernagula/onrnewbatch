@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="clk(1)">c</button>
+    <button onclick="clk(2)">c</button>
+    <button onclick="clk(3)">c</button>
+    <button>c</button><button>c</button>
+
+    <div id="container">
+
+    </div>
+    <script>
+      /*
+
+        loops
+        for loop 
+        while loop
+        do while
+        for in 
+        for of
+
+
+        for (startingpoint ; endingpint;source){
+        
+        }
+
+
+        for(initialization;conditon;updation){
+        }
+
+
+        for loop - when we know the iteration count- counter loop
+
+        for (let i=1;i<=10;i++){
+        console.log(i)
+        }
+
+        while loop - it is based on the event or condtion - event based loop
+
+        initializaation
+        let a=1
+
+        while(a<=10){//condtion
+        //code
+        console.log(a);
+
+        //updation
+        a++
+        }
+
+
+        restaurant menu app
+        
+        while(true){
+        var inp=prompt('enter ur menu items one by one ')
+        console.log(inp)
+        if(inp=='exit'){
+        console.log('order placed')
+        break;
+        }
+        }
+
+
+      
+        
+
+
+        do while
+        it will execute the code for one time even the condition is
+        falset in second iteration it will behave like a normal loop
+        
+    let a = 1;
+
+      do {
+        console.log(a);
+      } while (a > 10);
+
+      for in loop
+    it is used to iterate the string,array and object of index or keys
+  let arr=['html','css','js']
+        let obj={
+            name:'john',
+            age:25
+        }
+        let str='hello'
+        for (let i in str){
+            console.log(i)//indexes
+            console.log(str[i])//values
+        }
+
+
+    for of 
+    it is used to get the values of arrays and strings
+  let arr=['html','css','js']
+        let str='hello'
+        for (let i of arr){
+            console.log(i)
+        }
+    
+          break 
+        it is a keyword used to terminate the block of code
+
+        banking system
+
+        let password='1234'
+        let c=0
+
+        while(true){
+         let inp=prompt('enter ur password')
+         if(inp==password){
+         console.log('welcome to banking')
+         break;
+         }
+         c++
+         if(c==3){
+         console.log('your card is block for next 24hours')
+         break;
+         }
+        }
+
+
+
+
+        continue
+        it is used to skip the current iteration of the loop 
+        and moves control to the next iteration
+
+    
+    let data=[
+    {productid:23434,status:"expired"},
+    {productid:243644,status:"not expired"},
+    {productid:2334,status: " not expired"},
+    {productid:2344,status:"expired"},
+    {productid:234,status:"expired"}
+    ]
+
+
+
+
+             let data=[
+    {productid:23434,status:"expired"},
+    {productid:243644,status:"not expired"},
+    {productid:2334,status: "not expired"},
+    {productid:2344,status:"expired"},
+    {productid:234,status:"expired"}
+    ]
+    for (let i of data){
+        if(i['status']=='expired'){
+            continue
+        }
+        console.log(i['productid'])
+    }
+      
+
+    functions
+    it it block of reusable code that is used to perform 
+    specific task when invokes it
+
+    functions are defined with function keyword followed by funname
+    follwed by () may include parameters and {}block of code
+
+    static
+    // function declartion
+    function greet(){
+    console.log('hello dear welcome to the page')
+    }
+    //invoking
+    greet()
+
+
+    dynamic
+  function greet(name){
+    console.log(`hello ${name} welcome to the page`)
+    }
+    //invoking
+    greet('john')
+    greet('jessy')
+    greet('jack')
+
+    function clk(n){
+    console.log(n)
+    }
+    clk(1)
+    clk(2)
+    clk(3)
+        
+
+points in functions
+1) function name stores function definition
+2) logging of the function calling will give you the return value
+   return is used to store the end result 
+   return is used to terminate the function
+3) statements after return will not be executed
+4) named functions can only be hoisted
+
+function greet(){
+    console.log('hello world')
+    return 'hi'
+    console.log('hi world')
+}
+greet()//calling
+console.log(greet)//defintion
+console.log(greet())//return value
+
+*/
+
+      let students = [
+        {
+          name: "john",
+          marks: 80,
+        },
+        {
+          name: "jessy",
+          marks: 60,
+        },
+        {
+          name: "jack",
+          marks: 30,
+        }
+      ];
+
+      let container=document.getElementById('container')
+      for (i of students){
+        let grade=''
+        if(i['marks']>75){
+            grade="A"
+        }else if(i['marks']>35){
+            grade="B"
+        }else{
+            grade="F"
+        }
+        container.innerHTML+=`
+        <h1>${i.name} - ${i.marks} - ${grade}</h1>`
+
+        console.log(i.name,grade)
+      }
+    </script>
+  </body>
+</html>
