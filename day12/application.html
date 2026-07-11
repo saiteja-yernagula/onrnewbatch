@@ -109,28 +109,59 @@
         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="">
         <h1>Nike Shoes</h1>
         <p>2000</p>
-        <button onclick="addtocart()">addtocart</button>
+        <button onclick="addtocart('Nike',2000)">addtocart</button>
       </div>
       <div class="card">
         <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="">
         <h1>Smartwatch</h1>
         <p>1500</p>
-        <button onclick="addtocart()">addtocart</button>
+        <button onclick="addtocart('watch',1500)">addtocart</button>
       </div>
       <div class="card">
         <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="">
         <h1>Headphones</h1>
         <p>1200</p>
-        <button onclick="addtocart()">addtocart</button>
+        <button onclick="addtocart('headphones',1200)">addtocart</button>
       </div>
     </div>
 
     <div class="cart-section">
       <h3>Cart Section</h3>
       <div id="cartitems"></div>
-      <p id="total">Total</p>
+      <p id="total">Total 0</p>
     </div>
   
+    <script>
+      let c=0
+      let totalprice=0
+      let cart=[]
+      function addtocart(name,price){
+        totalprice+=price
+        c++
+
+        let cartcount=document.getElementById('cartcount')
+        cartcount.innerHTML=c
+
+        let total=document.getElementById('total')
+        total.innerHTML="Total "+totalprice
+
+        let product={name,price}
+        cart.push(product)
+      
+        cartitems=document.getElementById('cartitems')
+        cartitems.innerHTML=""
+        for (i of cart){
+          let output=`
+          <div class='cart-item'>
+            <h3>${i.name}</h3>
+            <h4>${i.price}</h4>
+          </div>
+          `
+          cartitems.innerHTML+=output
+        }
+
+      }
+    </script>
 
  
 
