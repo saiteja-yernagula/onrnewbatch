@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        types of functions
+        1) named function
+                function sum(a,b){
+        console.log(a+b)
+        }
+        2) anonymous function- a function that defined without a name'
+
+        let sum= function (a,b){
+        console.log(a+b)
+        }
+        sum(1,2)
+
+        3) arrow functions-
+        it is a more concise way of writing a function in simple syntax
+        let sum=(a,b)=>{
+        console.log(a+b)
+        }
+        sum(1,2)
+
+        arrow function automatically takes return if there is no {}
+
+        let sum=(a,b)=> a+b
+        console.log(sum(1,2))
+
+        we can eliminate () if there is only one parameter
+        let sum=a=> a+a
+        console.log(sum(2))
+
+        4) callback functions
+        callback is  when a function definition is passed to another
+        function as an argumnet and later executes on outer function
+
+        addtocart
+        orderpayment
+        invoice
+
+        
+        function invoice(){
+           console.log('invoice is generated')
+        }
+        function addtocart(callback){
+            console.log('products are added to cart')
+            callback(invoice)
+        }
+        function payment(callback){
+            console.log('payment is processed')
+            callback()
+        }
+        addtocart(payment)
+        
+
+        closures
+        when an inner function remembers the variable from the outer function
+        even after the execution and can able to change
+
+        */
+        function outer(){
+            let c=0
+            console.log('outer is executed')
+            return function(){
+                c++
+                console.log('inner is executed')
+                console.log(c)
+            }
+        }
+
+        let a=outer()
+        a()//1
+        a()//2
+
+        // outer()()//1   
+        // outer()()//1
+     
+       
+  
+      
+    </script>
+</body>
+</html>
