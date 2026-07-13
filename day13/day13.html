@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" id="registerform">
+        <input type="text" id="inp1"  placeholder="username"> 
+        <input type="text" id="inp2"  placeholder="password">
+        <button type="submit" id="btn">Submit</button> 
+    </form>
+    <script>
+        /*
+        let form=document.getElementById('registerform');
+        form.onsubmit=function (event){//it contains information about a form
+            //it prevents the automatic form submission
+            event.preventDefault()
+            //how to access inputs using target
+            console.log('form submitted')
+            // console.log(event.target[0].value)
+            // console.log(event.target[1].value)
+            // // using getelement by id
+            let inp1=document.getElementById('inp1')
+            let inp2=document.getElementById('inp2')
+            console.log(inp1.value)
+            console.log(inp2.value)
+        }
+
+
+        regex -regular expressions
+        it is used to match a specific patterns used for validations
+
+        let pattern=/javascript/
+
+        /javascript/
+        /[a-z]/   alphabets but single occurencce
+        /[a-z]+/   alphabets  multiple occurencce
+        /[A-Z]+/   alphabets  multiple occurencce
+        /[A-Za-z0-9]+/   alphanumerical
+
+        email pattern
+        name - [a-zA-Z0-9.#_]+
+        symb - @
+        gmail - [a-z]+
+        symb- .
+        com-  [a-z]{3}
+           let emailpattern=/[a-zA-Z0-9.#_]+@[a-z]+\.[a-z]{3}/  
+        let val='teja@gmail.com'
+        console.log(val.match(emailpattern))
+
+
+        password
+    it must start with - ^
+    capital-(?=.*[A-Z])
+    small-(?=.*[a-z])
+    number-(?=.*[0-9])
+    special char -(?=.*[#@#$%^&])
+    length {8}
+        */ 
+        let emailpattern=/[a-zA-Z0-9.#_]+@[a-z]+\.[a-z]{3}/  
+        let val='teja@gmail.com'
+        console.log(val.match(emailpattern))
+
+        let passwordpattern=/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8}/
+        let str='Teja@123'
+        console.log(str.match(passwordpattern))
+        
+
+        </script>
+</body>
+</html>
