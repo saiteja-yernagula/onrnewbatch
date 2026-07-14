@@ -76,23 +76,36 @@
     </style>
   </head>
   <body>
-
     <div class="container">
-        <h1>Weather app</h1>
-        <div class="search-box">
-            <input type="text" placeholder="enter city name"  id="city">
-            <button onclick="getweather()">search</button>
-        </div>
-        <div class="weather-box">
-            <h2 id="title"></h2>
-            <h1 id="temp"></h1>
-            <h3 id="state"></h3>
-            <h2 id="humid"></h2>
-        </div>
+      <h1>Weather app</h1>
+      <div class="search-box">
+        <input type="text" placeholder="enter city name" id="city" />
+        <button onclick="getweather()">search</button>
+      </div>
+      <div class="weather-box">
+        <h2 id="title"></h2>
+        <h1 id="temp"></h1>
+        <h3 id="state"></h3>
+        <h2 id="humid"></h2>
+      </div>
     </div>
-    
- 
 
-
+    <script>
+      async function getweather() {
+        let city = document.getElementById("city");
+        let data = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=metric&appid=466ddaa21a8de191e9f608bd11a56acb`,
+        );
+        let finaldata = await data.json();
+        let title=document.getElementById('title')
+        let temp=document.getElementById('temp')
+        let state=document.getElementById('state')
+        let humid=document.getElementById('humid')
+        title.innerHTML=city.value
+        temp.innerHTML=finaldata.main.temp
+        state.innerHTML=finaldata.weather[0].main
+        humid.innerHTML=finaldata.main.humidity
+      }
+    </script>
   </body>
 </html>
