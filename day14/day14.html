@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+
+    synchronous javascript
+    which execudes the code line by line
+
+    asynchronous javascript- parallel of execution
+    which executes parallelly and it is independent from the mainstream
+    it only executes after the completion of all synchronous tasks
+        console.log('first')
+        setTimeout(()=>{
+            console.log('second')
+        },0)
+        console.log('third')
+
+    event loop mechanism
+    callstack
+    webapi
+    callback que
+    event loop
+
+
+    1) callbacks
+    2) promises
+       it represents the eventual completion or failure of an
+       asynchronous operation
+       it is used handle asynchronous code
+
+       promise have three states
+       1) pending
+       2) fullfilled
+       3) rejected
+
+       1) creating a promise - setting a rules
+       let prom=new Promise((res,rej)=>{
+       let val=10
+       if(val==10){
+       res('promise is fullfilled')
+       }else{
+       rej('promise is rejected')
+        }
+       })
+
+       
+       2)  to consume a promise
+       1) .then.catch
+       2) async await
+        
+       
+       let prom=new Promise((res,rej)=>{
+       let val=prompt('enter a number')
+       if(val==10){
+       res('promise is fullfilled')
+       }else{
+       rej('promise is rejected')
+        }
+       })
+
+    prom.then((result)=>console.log(result))
+    .catch((error)=>console.log(error))
+
+    //    using async await
+    // async- it tells we are going to define asynchronous operation
+     async function solveprom(){
+        let a=await prom //await - it pauses the execution of code until the completion of a asyn task
+        console.log(a)
+      }
+      solveprom()
+
+
+      Api - application programming interface
+      it is used to form the communication between the client and 
+      the server
+
+      fetch
+      
+      it is used to make an network request (api calling)
+      it returns a promise
+      to consume a promise - then catch or async await
+      it will accept two parameters
+      fetch(apilink,headers)
+      */ 
+
+      let apilink='https://fakestoreapi.com/products'
+      fetch(apilink).then(res=>res.json())
+      .then(finalres=>{console.log(finalres)})
+      .catch(err=>console.log(err))
+
+      async function getdata(){
+        let api=await fetch('https://fakestoreapi.com/products')
+        let data=await api.json()
+        console.log(data)
+      }
+      getdata()
+      </script>
+</body>
+</html>
