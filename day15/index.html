@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        es-6 concepts
+        let const
+        arrow functions
+        localstorage
+        higher order functions -map filter reduce sort
+        destructuring
+        spread operator
+
+        terms
+        declaration
+        var a;
+        var a;--redeclaration
+
+        assignment
+        var a;
+        a=10;
+
+        initializaiont
+        var a=10;
+
+        hoisting
+        console.log(a)
+        var a=10;
+
+
+
+        var -older browsers
+        redeclaration is allowed
+        assignment is allowed
+        function adn gloabl scope
+        hoisting is applicable
+    
+        let
+        redeclaration is not allowed
+        assignment is allowed
+        blcok,gloabl and function
+        hoisting is not applicable because it was in tdz
+
+        const
+        redeclaration is not allowed
+        assignment is not allowed
+        blcok,gloabl and function
+        hoisting is not applicable because it was in tdz
+
+        scope
+        a life or accessibility of a variable
+        global scope - var ,let ,const 
+        block scope - let and const
+        local or function scope - var ,let and const
+
+    
+        let founder='sairam sir'
+        console.log(founder)
+
+        {
+        let trainer='saiteja'
+        console.log(founder) 
+        console.log(trainer)
+        }
+        // console.log(trainer)--cannot access due to block scope
+        function classroom(){
+        const std1='vena sri'
+        let std2='sai'
+        var std3='kalyan'
+        console.log(std1,std2,std3)
+        console.log(founder)
+    }
+    classroom()
+    console.log(std1,std2,std3)//cannot acccess due to local scope
+    
+
+    //arrow functions
+    let sum=a=>a+a
+
+
+    local storage or session storage
+    how to sent data
+     let stdname='vena sree'
+    localStorage.setItem('onrstd',stdname)
+
+    how to get data
+  let stdname='vena sree'
+    localStorage.setItem('onrstd',stdname)
+    // application ---localstorage---link--data
+
+    let onrstd=localStorage.getItem('onrstd')
+    console.log(onrstd)
+
+    //JSON.stringify--converts js into json
+    let obj={name:'john',age:23}
+    localStorage.setItem('onrjohn',JSON.stringify(obj))
+    //JSON.parse--converts json into js
+    let dataobj=JSON.parse(localStorage.getItem('onrjohn'))
+    console.log(dataobj)
+  
+        hof - a function which recieves another functiion and produces the result
+
+        map - it is used to create transformed array by appplying
+        provided function for every element and it returns transformed
+        array
+                let arr=['john','jack','jick']
+        let newarr=arr.map((val,ind,ar)=>{
+            return 'Mr '+val
+        })
+        console.log(newarr)
+
+        filter
+    it is used to create filtered array by applying provided 
+    boolean function for every element and returns filtered array
+
+let num=[1,2,3,4,5,6]
+        let evennum=num.filter((val)=>{
+            return val%2==0
+        })
+        console.log(evennum)
+
+        reduce
+        it is used to create a single value from a array by 
+        applying function
+
+        let total=num.reduce((acc,val,ind,ar)=>{
+            return acc+val
+        },0)
+        console.log(total)
+
+
+
+    */
+        let arr=['john','jack','jick']
+        let newarr=arr.map((val,ind,ar)=>{
+            return 'Mr '+val
+        })
+        console.log(newarr)
+
+        let num=[1,2,3,4,5,6]
+        let evennum=num.filter((val)=>{
+            return val%2==0
+        })
+        console.log(evennum)
+
+        let total=num.reduce((acc,val,ind,ar)=>{
+            return acc+val
+        },0)
+        console.log(total)
+
+        let productsdata=[
+            {price:3943,rating:4,product:'apple'},
+            {price:2943,rating:5,product:'samsung'},
+            {price:1843,rating:3,product:'oneplus'}
+        ]
+        let sorted=productsdata.sort((a,b)=>{
+            return b.rating-a.rating
+        })
+        console.log(sorted)
+
+
+
+
+
+
+
+  
+    
+
+       
+    </script>
+</body>
+</html>
