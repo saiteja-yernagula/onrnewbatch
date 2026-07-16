@@ -154,6 +154,42 @@
       
       </div>
     </div>
+    <script>
+      let tasks= JSON.parse(localStorage.getItem("onrtasks1")) || [];
+      display()
+      function addtask(){
+        let inp=document.getElementById('inp')
+        if(inp.value==""){
+          alert('please enter value')
+          return
+        }
+        tasks.push(inp.value)
+        localStorage.setItem('onrtasks1',JSON.stringify(tasks))
+        console.log(tasks)
+        inp.value=''
+        display()
+      }
+      function display(){
+        let tasklist=document.getElementById('tasklist')
+        tasklist.innerHTML=tasks.map((val,ind)=>{
+         return `
+         <div class='task'>
+          <h3>${val}</h3>
+          <button class='delete-btn' onclick='deltask(${ind})'>Del</button>
+          </div>
+         `
+        }).join('')
+      }
+
+      
+      function deltask(delitem){
+         tasks=tasks.filter((val,ind)=>{
+          return ind!=delitem
+        })
+        localStorage.setItem('onrtasks',tasks)
+        display()
+      }
+    </script>
 
   </body>
 </html>
